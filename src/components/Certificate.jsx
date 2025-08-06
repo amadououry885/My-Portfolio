@@ -179,7 +179,7 @@ const Certificate = ({ ImgSertif }) => {
 					{/* Modal Image */}
 					<img
 						src={ImgSertif}
-						alt="Certificate Full View"
+						alt="Cybersecurity Certificate"
 						style={{
 							display: "block",
 							maxWidth: "100%",

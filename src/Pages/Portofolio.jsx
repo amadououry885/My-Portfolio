@@ -106,19 +106,18 @@ function a11yProps(index) {
 const techStacks = [
   { icon: "html.svg", language: "HTML" },
   { icon: "css.svg", language: "CSS" },
-  { icon: "javascript.svg", language: "JavaScript" },
-  { icon: "tailwind.svg", language: "Tailwind CSS" },
-  { icon: "reactjs.svg", language: "ReactJS" },
-  { icon: "vite.svg", language: "Vite" },
-  { icon: "nodejs.svg", language: "Node JS" },
   { icon: "bootstrap.svg", language: "Bootstrap" },
-  { icon: "firebase.svg", language: "Firebase" },
-  { icon: "MUI.svg", language: "Material UI" },
-  { icon: "vercel.svg", language: "Vercel" },
-  { icon: "SweetAlert.svg", language: "SweetAlert2" },
+  { icon: "java.svg", language: "Java" },
+  { icon: "python.svg", language: "Python" },
+  { icon: "spreadsheet.svg", language: "Spreadsheet" },
+  { icon: "r.svg", language: "R" },
+  { icon: "c.svg", language: "C" },
+  { icon: "sql.svg", language: "SQL" },
+  { icon: "powerbi.svg", language: "Power BI" },
 ];
 
 export default function FullWidthTabs() {
+  console.log("FullWidthTabs rendered");
   const theme = useTheme();
   const [value, setValue] = useState(0);
   const [projects, setProjects] = useState([]);
@@ -153,6 +152,8 @@ export default function FullWidthTabs() {
 
       setProjects(projectData);
       setCertificates(certificateData);
+
+      console.log("Fetched certificates:", certificateData);
 
       // Store in localStorage (fungsionalitas ini tetap dipertahankan)
       localStorage.setItem("projects", JSON.stringify(projectData));
@@ -339,15 +340,27 @@ export default function FullWidthTabs() {
           <TabPanel value={value} index={1} dir={theme.direction}>
             <div className="container mx-auto flex justify-center items-center overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
-                {displayedCertificates.map((certificate, index) => (
-                  <div
-                    key={certificate.id || index}
-                    data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
-                    data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
-                  >
-                    <Certificate ImgSertif={certificate.Img} />
-                  </div>
-                ))}
+                console.log("Displayed certificates:", displayedCertificates);
+                {displayedCertificates
+                  .filter(certificate => certificate.img)
+                  .map((certificate, index) => {
+                    console.log("CERTIFICATE IMAGE PATH: ", certificate.img);
+
+                    // If certificate.img is just a filename, build the full URL:
+                    const imgUrl = certificate.img?.startsWith("http")
+                      ? certificate.img
+                      : `https://nvgtmcemqefmpwkaccui.supabase.co/storage/v1/object/public/certificates/${certificate.img}`;
+
+                    return (
+                      <div
+                        key={certificate.id || index}
+                        data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                        data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
+                      >
+                        <Certificate ImgSertif={imgUrl} />
+                      </div>
+                    );
+                  })}
               </div>
             </div>
             {certificates.length > initialItems && (
