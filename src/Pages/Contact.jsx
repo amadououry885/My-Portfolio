@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Share2, User, Mail, MessageSquare, Send } from "lucide-react";
 import { Link } from "react-router-dom";
 import SocialLinks from "../components/SocialLinks";
-import Komentar from "../components/Commentar";
+// import Komentar from "../components/Commentar"; // Temporarily disabled - requires database
 import Swal from "sweetalert2";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -231,9 +231,10 @@ const ContactPage = () => {
             </div>
           </div>
 
-          <div className="  bg-white/5 backdrop-blur-xl rounded-3xl p-3 py-3 md:p-10 md:py-8 shadow-2xl transform transition-all duration-500 hover:shadow-[#6366f1]/10">
+          {/* Comment section temporarily disabled - requires database */}
+          {/* <div className="  bg-white/5 backdrop-blur-xl rounded-3xl p-3 py-3 md:p-10 md:py-8 shadow-2xl transform transition-all duration-500 hover:shadow-[#6366f1]/10">
             <Komentar />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

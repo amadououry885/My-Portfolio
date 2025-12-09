@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
 
-import { supabase } from "../supabase"; 
-
 import PropTypes from "prop-types";
 import SwipeableViews from "react-swipeable-views";
 import { useTheme } from "@mui/material/styles";
@@ -16,6 +14,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Certificate from "../components/Certificate";
 import { Code, Award, Boxes } from "lucide-react";
+
+// Import local data
+import projectsData from "../data/projects.json";
+import certificatesData from "../data/certificates.json";
 
 
 const ToggleButton = ({ onClick, isShowingMore }) => (
@@ -104,24 +106,24 @@ function a11yProps(index) {
 
 // techStacks tetap sama
 const techStacks = [
-  { icon: "html.svg", language: "HTML" },
-  { icon: "css.svg", language: "CSS" },
-  { icon: "bootstrap.svg", language: "Bootstrap" },
-  { icon: "java.svg", language: "Java" },
-  { icon: "python.svg", language: "Python" },
-  { icon: "spreadsheet.svg", language: "Spreadsheet" },
-  { icon: "r.svg", language: "R" },
-  { icon: "c.svg", language: "C" },
-  { icon: "sql.svg", language: "SQL" },
-  { icon: "powerbi.svg", language: "Power BI" },
+  { icon: "/My-Portfolio/assets/html.svg", language: "HTML" },
+  { icon: "/My-Portfolio/assets/css.svg", language: "CSS" },
+  { icon: "/My-Portfolio/assets/bootstrap.svg", language: "Bootstrap" },
+  { icon: "/My-Portfolio/java.svg", language: "Java" },
+  { icon: "/My-Portfolio/assets/python.svg", language: "Python" },
+  { icon: "/My-Portfolio/assets/spreadsheet.svg", language: "Spreadsheet" },
+  { icon: "/My-Portfolio/r.svg", language: "R" },
+  { icon: "/My-Portfolio/c.svg", language: "C" },
+  { icon: "/My-Portfolio/sql.svg", language: "SQL" },
+  { icon: "/My-Portfolio/powerbi.svg", language: "Power BI" },
 ];
 
 export default function FullWidthTabs() {
   console.log("FullWidthTabs rendered");
   const theme = useTheme();
   const [value, setValue] = useState(0);
-  const [projects, setProjects] = useState([]);
-  const [certificates, setCertificates] = useState([]);
+  const [projects, setProjects] = useState(projectsData);
+  const [certificates, setCertificates] = useState(certificatesData);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [showAllCertificates, setShowAllCertificates] = useState(false);
   const isMobile = window.innerWidth < 768;
@@ -132,51 +134,6 @@ export default function FullWidthTabs() {
       once: false,
     });
   }, []);
-
-
-  const fetchData = useCallback(async () => {
-    try {
-      // Mengambil data dari Supabase secara paralel
-      const [projectsResponse, certificatesResponse] = await Promise.all([
-        supabase.from("projects").select("*").order('id', { ascending: true }),
-        supabase.from("certificates").select("*").order('id', { ascending: true }), 
-      ]);
-
-      // Error handling untuk setiap request
-      if (projectsResponse.error) throw projectsResponse.error;
-      if (certificatesResponse.error) throw certificatesResponse.error;
-
-      // Supabase mengembalikan data dalam properti 'data'
-      const projectData = projectsResponse.data || [];
-      const certificateData = certificatesResponse.data || [];
-
-      setProjects(projectData);
-      setCertificates(certificateData);
-
-      console.log("Fetched certificates:", certificateData);
-
-      // Store in localStorage (fungsionalitas ini tetap dipertahankan)
-      localStorage.setItem("projects", JSON.stringify(projectData));
-      localStorage.setItem("certificates", JSON.stringify(certificateData));
-    } catch (error) {
-      console.error("Error fetching data from Supabase:", error.message);
-    }
-  }, []);
-
-
-
-  useEffect(() => {
-    // Coba ambil dari localStorage dulu untuk laod lebih cepat
-    const cachedProjects = localStorage.getItem('projects');
-    const cachedCertificates = localStorage.getItem('certificates');
-
-    if (cachedProjects && cachedCertificates) {
-        setProjects(JSON.parse(cachedProjects));
-        setCertificates(JSON.parse(cachedCertificates));
-    }
-    
-    fetchData(); // Tetap panggil fetchData untuk sinkronisasi data terbaru
-  }, [fetchData]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -340,27 +297,17 @@ export default function FullWidthTabs() {
           <TabPanel value={value} index={1} dir={theme.direction}>
             <div className="container mx-auto flex justify-center items-center overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
-                console.log("Displayed certificates:", displayedCertificates);
                 {displayedCertificates
                   .filter(certificate => certificate.img)
-                  .map((certificate, index) => {
-                    console.log("CERTIFICATE IMAGE PATH: ", certificate.img);
-
-                    // If certificate.img is just a filename, build the full URL:
-                    const imgUrl = certificate.img?.startsWith("http")
-                      ? certificate.img
-                      : `https://nvgtmcemqefmpwkaccui.supabase.co/storage/v1/object/public/certificates/${certificate.img}`;
-
-                    return (
-                      <div
-                        key={certificate.id || index}
-                        data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
-                        data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
-                      >
-                        <Certificate ImgSertif={imgUrl} />
-                      </div>
-                    );
-                  })}
+                  .map((certificate, index) => (
+                    <div
+                      key={certificate.id || index}
+                      data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                      data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
+                    >
+                      <Certificate ImgSertif={certificate.img} />
+                    </div>
+                  ))}
               </div>
             </div>
             {certificates.length > initialItems && (

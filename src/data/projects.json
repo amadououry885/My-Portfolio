@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "Title": "E-Commerce Platform",
+    "Description": "A full-stack e-commerce web application built with React and Node.js featuring user authentication, product catalog, shopping cart, and payment integration.",
+    "Img": "/My-Portfolio/assets/Photo.png",
+    "Link": "https://github.com/amadououry885"
+  },
+  {
+    "id": 2,
+    "Title": "Portfolio Website",
+    "Description": "Modern and responsive portfolio website showcasing projects, skills, and professional experience with smooth animations and interactive elements.",
+    "Img": "/My-Portfolio/assets/Photo.png",
+    "Link": "https://github.com/amadououry885"
+  },
+  {
+    "id": 3,
+    "Title": "Data Dashboard",
+    "Description": "Interactive data visualization dashboard using React and D3.js to display real-time analytics and business metrics with customizable charts and graphs.",
+    "Img": "/My-Portfolio/assets/Photo.png",
+    "Link": "https://github.com/amadououry885"
+  }
+]
