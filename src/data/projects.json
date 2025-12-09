@@ -3,7 +3,7 @@
     "id": 1,
     "Title": "Kedah Tourism Analytics Dashboard",
     "Description": "Interactive web platform analyzing real-time tourism data across Kedah state. Provides insights on visitor trends, transport routes, events, and sentiment through dynamic charts and geospatial maps, supporting data-driven decision-making for tourism stakeholders.",
-    "Img": "/My-Portfolio/assets/kedah-dashboard.png",
+    "Img": "/assets/kedah-dashboard.png",
     "Link": "https://tourism-analytics-dashboard.vercel.app/",
     "Github": "https://github.com/amadououry885/tourism-analytics-dashboard",
     "TechStack": ["React", "TypeScript", "Django", "PostgreSQL", "Tailwind CSS", "Leaflet.js"],

@@ -2,27 +2,27 @@
   {
     "id": 1,
     "title": "Data Analytics Certification",
-    "img": "/My-Portfolio/certificates/Oury1.png"
+    "img": "/certificates/Oury1.png"
   },
   {
     "id": 2,
     "title": "Python Programming certification",
-    "img": "/My-Portfolio/certificates/Oury2.png"
+    "img": "/certificates/Oury2.png"
   },
   {
     "id": 3,
     "title": "Professional Foundations skills",
-    "img": "/My-Portfolio/certificates/Oury3.png"
+    "img": "/certificates/Oury3.png"
   },
   {
     "id": 4,
     "title": "Cyber Security Certification",
-    "img": "/My-Portfolio/certificates/Oury4.png"
+    "img": "/certificates/Oury4.png"
   },
   {
     "id": 5,
     "title": "Backend Development Certification",
-    "img": "/My-Portfolio/certificates/Oury5.jpeg"
+    "img": "/certificates/Oury5.jpeg"
   }
 
 ]
