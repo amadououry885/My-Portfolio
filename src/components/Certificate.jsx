@@ -5,6 +5,7 @@ import FullscreenIcon from "@mui/icons-material/Fullscreen"
 
 const Certificate = ({ ImgSertif }) => {
 	const [open, setOpen] = useState(false)
+	const [imageError, setImageError] = useState(false)
 
 	const handleOpen = () => {
 		setOpen(true)
@@ -13,6 +14,19 @@ const Certificate = ({ ImgSertif }) => {
 	const handleClose = () => {
 		setOpen(false)
 	}
+
+	console.log('Certificate ImgSertif:', ImgSertif);
+
+	// Test if image exists
+	React.useEffect(() => {
+		const img = new Image();
+		img.onload = () => console.log('✓ Image loaded successfully:', ImgSertif);
+		img.onerror = () => {
+			console.error('✗ Failed to load image:', ImgSertif);
+			setImageError(true);
+		};
+		img.src = ImgSertif;
+	}, [ImgSertif]);
 
 	return (
 		<Box component="div" sx={{ width: "100%" }}>
@@ -68,6 +82,10 @@ const Certificate = ({ ImgSertif }) => {
 							transition: "filter 0.3s ease",
 						}}
 						onClick={handleOpen}
+						onError={(e) => {
+							console.error('Failed to load image:', ImgSertif);
+							console.log('Image element:', e.target);
+						}}
 					/>
 				</Box>
 

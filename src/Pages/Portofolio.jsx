@@ -129,6 +129,8 @@ export default function FullWidthTabs() {
   const isMobile = window.innerWidth < 768;
   const initialItems = isMobile ? 4 : 6;
 
+  console.log('Certificates data loaded:', certificates);
+
   useEffect(() => {
     AOS.init({
       once: false,
@@ -297,9 +299,9 @@ export default function FullWidthTabs() {
           <TabPanel value={value} index={1} dir={theme.direction}>
             <div className="container mx-auto flex justify-center items-center overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
-                {displayedCertificates
-                  .filter(certificate => certificate.img)
-                  .map((certificate, index) => (
+                {displayedCertificates.map((certificate, index) => {
+                  console.log('Certificate image path:', certificate.img);
+                  return (
                     <div
                       key={certificate.id || index}
                       data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
@@ -307,7 +309,8 @@ export default function FullWidthTabs() {
                     >
                       <Certificate ImgSertif={certificate.img} />
                     </div>
-                  ))}
+                  );
+                })}
               </div>
             </div>
             {certificates.length > initialItems && (
