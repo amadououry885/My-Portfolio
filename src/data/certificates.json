@@ -16,8 +16,13 @@
   },
   {
     "id": 4,
-    "title": "Data Visualization with Tableau",
+    "title": "Cyber Security Certification",
     "img": "/My-Portfolio/certificates/Oury4.png"
+  },
+  {
+    "id": 5,
+    "title": "Backend Development Certification",
+    "img": "/My-Portfolio/certificates/Oury5.jpeg"
   }
 
 ]

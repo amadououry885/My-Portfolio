@@ -1,23 +1,17 @@
 [
   {
     "id": 1,
-    "Title": "E-Commerce Platform",
-    "Description": "A full-stack e-commerce web application built with React and Node.js featuring user authentication, product catalog, shopping cart, and payment integration.",
-    "Img": "/My-Portfolio/assets/Photo.png",
-    "Link": "https://github.com/amadououry885"
-  },
-  {
-    "id": 2,
-    "Title": "Portfolio Website",
-    "Description": "Modern and responsive portfolio website showcasing projects, skills, and professional experience with smooth animations and interactive elements.",
-    "Img": "/My-Portfolio/assets/Photo.png",
-    "Link": "https://github.com/amadououry885"
-  },
-  {
-    "id": 3,
-    "Title": "Data Dashboard",
-    "Description": "Interactive data visualization dashboard using React and D3.js to display real-time analytics and business metrics with customizable charts and graphs.",
-    "Img": "/My-Portfolio/assets/Photo.png",
-    "Link": "https://github.com/amadououry885"
+    "Title": "Kedah Tourism Analytics Dashboard",
+    "Description": "Interactive web platform analyzing real-time tourism data across Kedah state. Provides insights on visitor trends, transport routes, events, and sentiment through dynamic charts and geospatial maps, supporting data-driven decision-making for tourism stakeholders.",
+    "Img": "/My-Portfolio/assets/kedah-dashboard.png",
+    "Link": "https://tourism-analytics-dashboard.vercel.app/",
+    "Github": "https://github.com/amadououry885/tourism-analytics-dashboard",
+    "TechStack": ["React", "TypeScript", "Django", "PostgreSQL", "Tailwind CSS", "Leaflet.js"],
+    "Features": [
+      "Real-time visitor & social media engagement analytics",
+      "Interactive geospatial mapping with destinations and routes",
+      "Event attendance tracking and transport mode statistics",
+      "Sentiment analysis and dynamic location ranking"
+    ]
   }
 ]
