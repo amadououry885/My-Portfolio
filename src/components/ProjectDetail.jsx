@@ -5,6 +5,7 @@ import {
   ChevronRight, Layers, Layout, Globe, Package, Cpu, Code,
 } from "lucide-react";
 import Swal from 'sweetalert2';
+import projectsData from "../data/projects.json";
 
 const TECH_ICONS = {
   React: Globe,
@@ -102,15 +103,14 @@ const ProjectDetails = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const storedProjects = JSON.parse(localStorage.getItem("projects")) || [];
-    const selectedProject = storedProjects.find((p) => String(p.id) === id);
+    const selectedProject = projectsData.find((p) => String(p.id) === id);
     
     if (selectedProject) {
       const enhancedProject = {
         ...selectedProject,
         Features: selectedProject.Features || [],
         TechStack: selectedProject.TechStack || [],
-        Github: selectedProject.Github || 'https://github.com/EkiZR',
+        Github: selectedProject.Github || 'https://github.com/amadououry885',
       };
       setProject(enhancedProject);
     }
