@@ -6,12 +6,22 @@
   },
   {
     "id": 2,
-    "title": "Python Programming certification",
+    "title": "Python Programming Certification",
     "img": "/certificates/Oury2.png"
   },
   {
     "id": 3,
-    "title": "Professional Foundations skills",
+    "title": "Professional Foundations Skills",
     "img": "/certificates/Oury3.png"
+  },
+  {
+    "id": 4,
+    "title": "Google Networking Certification",
+    "img": "/certificates/Oury4.png"
+  },
+  {
+    "id": 5,
+    "title": "Backend Development Certification",
+    "img": "/certificates/Oury5.jpeg"
   }
 ]
