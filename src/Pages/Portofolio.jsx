@@ -106,16 +106,16 @@ function a11yProps(index) {
 
 // techStacks tetap sama
 const techStacks = [
-  { icon: "/My-Portfolio/assets/html.svg", language: "HTML" },
-  { icon: "/My-Portfolio/assets/css.svg", language: "CSS" },
-  { icon: "/My-Portfolio/assets/bootstrap.svg", language: "Bootstrap" },
-  { icon: "/My-Portfolio/java.svg", language: "Java" },
-  { icon: "/My-Portfolio/assets/python.svg", language: "Python" },
-  { icon: "/My-Portfolio/assets/spreadsheet.svg", language: "Spreadsheet" },
-  { icon: "/My-Portfolio/r.svg", language: "R" },
-  { icon: "/My-Portfolio/c.svg", language: "C" },
-  { icon: "/My-Portfolio/sql.svg", language: "SQL" },
-  { icon: "/My-Portfolio/powerbi.svg", language: "Power BI" },
+  { icon: "/assets/html.svg", language: "HTML" },
+  { icon: "/assets/css.svg", language: "CSS" },
+  { icon: "/assets/bootstrap.svg", language: "Bootstrap" },
+  { icon: "/java.svg", language: "Java" },
+  { icon: "/assets/python.svg", language: "Python" },
+  { icon: "/assets/spreadsheet.svg", language: "Spreadsheet" },
+  { icon: "/r.svg", language: "R" },
+  { icon: "/c.svg", language: "C" },
+  { icon: "/sql.svg", language: "SQL" },
+  { icon: "/powerbi.svg", language: "Power BI" },
 ];
 
 export default function FullWidthTabs() {
