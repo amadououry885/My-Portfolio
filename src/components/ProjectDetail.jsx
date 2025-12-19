@@ -100,6 +100,7 @@ const ProjectDetails = () => {
   const navigate = useNavigate();
   const [project, setProject] = useState(null);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -224,13 +225,36 @@ const ProjectDetails = () => {
               
                 <div className="absolute inset-0 bg-gradient-to-t from-[#030014] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <img
-                  src={project.Img}
+                  src={project.Images && project.Images.length > 0 ? project.Images[currentImageIndex] : project.Img}
                   alt={project.Title}
                   className="w-full  object-cover transform transition-transform duration-700 will-change-transform group-hover:scale-105"
                   onLoad={() => setIsImageLoaded(true)}
                 />
                 <div className="absolute inset-0 border-2 border-white/0 group-hover:border-white/10 transition-colors duration-300 rounded-2xl" />
               </div>
+
+              {/* Image Gallery Navigation */}
+              {project.Images && project.Images.length > 1 && (
+                <div className="flex gap-2 justify-center flex-wrap">
+                  {project.Images.map((img, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+                        currentImageIndex === index 
+                          ? 'border-blue-500 scale-110' 
+                          : 'border-white/20 hover:border-white/40'
+                      }`}
+                    >
+                      <img 
+                        src={img} 
+                        alt={`${project.Title} ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
 
               {/* Fitur Utama */}
               <div className="bg-white/[0.02] backdrop-blur-xl rounded-2xl p-8 border border-white/10 space-y-6 hover:border-white/20 transition-colors duration-300 group">

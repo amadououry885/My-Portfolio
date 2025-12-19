@@ -18,7 +18,14 @@
     "id": 2,
     "Title": "AIU BookEase - Facilities Booking System",
     "Description": "Web-based application enabling students and staff to book campus facilities online. Built with Django and MySQL, it automates reservations, prevents double bookings, and allows admins to manage facility availability with real-time updates.",
-    "Img": "/assets/booking-system.png",
+    "Img": "/assets/booking-browse.png",
+    "Images": [
+      "/assets/booking-login.png",
+      "/assets/booking-dashboard.png",
+      "/assets/booking-browse.png",
+      "/assets/booking-admin.png",
+      "/assets/booking-facilities.png"
+    ],
     "Link": "https://github.com/amadououry885/AIU_BookEase",
     "Github": "https://github.com/amadououry885/AIU_BookEase",
     "TechStack": ["Python", "Django", "MySQL", "JavaScript", "HTML", "CSS"],
