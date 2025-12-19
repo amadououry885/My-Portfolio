@@ -16,17 +16,17 @@
   },
   {
     "id": 2,
-    "Title": "AIU Booking Facilities System",
-    "Description": "Full-stack web application for managing and booking facilities at AIU. Enables students and staff to reserve rooms, equipment, and venues with real-time availability tracking and automated approval workflows.",
+    "Title": "AIU BookEase - Facilities Booking System",
+    "Description": "Web-based application enabling students and staff to book campus facilities online. Built with Django and MySQL, it automates reservations, prevents double bookings, and allows admins to manage facility availability with real-time updates.",
     "Img": "/assets/booking-system.png",
-    "Link": "https://github.com/amadououry885",
-    "Github": "https://github.com/amadououry885/YOUR_REPO_NAME",
-    "TechStack": ["React", "Node.js", "Express", "MongoDB", "Bootstrap"],
+    "Link": "https://github.com/amadououry885/AIU_BookEase",
+    "Github": "https://github.com/amadououry885/AIU_BookEase",
+    "TechStack": ["Python", "Django", "MySQL", "JavaScript", "HTML", "CSS"],
     "Features": [
-      "Real-time facility availability and booking system",
-      "User authentication and role-based access control",
-      "Automated booking approval workflow",
-      "Booking history and calendar integration"
+      "User authentication with role-based access control",
+      "Real-time facility browsing and availability checking",
+      "Automated booking system with conflict prevention",
+      "Admin dashboard for approval and facility management"
     ]
   }
 ]
