@@ -13,5 +13,20 @@
       "Event attendance tracking and transport mode statistics",
       "Sentiment analysis and dynamic location ranking"
     ]
+  },
+  {
+    "id": 2,
+    "Title": "AIU Booking Facilities System",
+    "Description": "Full-stack web application for managing and booking facilities at AIU. Enables students and staff to reserve rooms, equipment, and venues with real-time availability tracking and automated approval workflows.",
+    "Img": "/assets/booking-system.png",
+    "Link": "https://github.com/amadououry885",
+    "Github": "https://github.com/amadououry885/YOUR_REPO_NAME",
+    "TechStack": ["React", "Node.js", "Express", "MongoDB", "Bootstrap"],
+    "Features": [
+      "Real-time facility availability and booking system",
+      "User authentication and role-based access control",
+      "Automated booking approval workflow",
+      "Booking history and calendar integration"
+    ]
   }
 ]
