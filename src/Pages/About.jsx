@@ -1,5 +1,5 @@
 import React, { useEffect, memo, useMemo } from "react"
-import { Code, Award, Globe, ArrowUpRight, Sparkles, UserCheck, FileText } from "lucide-react"
+import { Code, Award, Globe, ArrowUpRight, Sparkles, UserCheck, FileText, Languages } from "lucide-react"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -67,6 +67,33 @@ const ProfileImage = memo(() => (
             <div className="absolute inset-0 rounded-full border-8 border-white/10 scale-0 group-hover:scale-100 transition-transform duration-700 animate-pulse-slow" />
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+));
+
+const LanguageBar = memo(({ language, proficiency, flag, animation }) => (
+  <div 
+    data-aos={animation} 
+    data-aos-duration="1000"
+    className="relative group"
+  >
+    <div className="flex items-center justify-between mb-2">
+      <div className="flex items-center gap-3">
+        <span className="text-2xl">{flag}</span>
+        <span className="text-gray-200 font-medium">{language}</span>
+      </div>
+      <span className="text-sm text-gray-400">{proficiency}%</span>
+    </div>
+    <div className="relative h-2 bg-gray-800/50 rounded-full overflow-hidden backdrop-blur-sm">
+      <div 
+        className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-full transition-all duration-1000 group-hover:shadow-lg group-hover:shadow-purple-500/50"
+        style={{ width: `${proficiency}%` }}
+        data-aos="slide-right"
+        data-aos-duration="1500"
+        data-aos-delay="200"
+      >
+        <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
       </div>
     </div>
   </div>
@@ -272,6 +299,34 @@ My long-term dream is to use data and technology to fight against climate change
           {statsData.map((stat) => (
             <StatCard key={stat.label} {...stat} />
           ))}
+        </div>
+
+        {/* Languages Section */}
+        <div className="mt-16" data-aos="fade-up" data-aos-duration="1000">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#6366f1] to-[#a855f7] flex items-center justify-center">
+              <Languages className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-white">Languages</h3>
+              <p className="text-sm text-gray-400">Communication proficiency</p>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-900/30 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
+            <LanguageBar 
+              language="English" 
+              proficiency={90} 
+              flag="🇬🇧" 
+              animation="fade-right"
+            />
+            <LanguageBar 
+              language="French" 
+              proficiency={100} 
+              flag="🇫🇷" 
+              animation="fade-left"
+            />
+          </div>
         </div>
       </div>
 
