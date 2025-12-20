@@ -317,7 +317,7 @@ My long-term dream is to use data and technology to fight against climate change
             <LanguageBar 
               language="Poulaar (Fulfulde)" 
               proficiency={100} 
-              flag="🗣️" 
+              flag="🇬🇳" 
               animation="fade-right"
             />
             <LanguageBar 
