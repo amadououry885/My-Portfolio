@@ -35,5 +35,24 @@
       "Automated booking system with conflict prevention",
       "Admin dashboard for approval and facility management"
     ]
+  },
+  {
+    "id": 3,
+    "Title": "US Education & Income Data Analysis",
+    "Description": "Comprehensive analysis of US education levels and household income across all states using census data from 2016. Features interactive visualizations exploring the correlation between educational attainment and median household income with state-level comparisons.",
+    "Img": "/assets/us-education-dashboard.png",
+    "Images": [
+      "/assets/us-education-dashboard.png",
+      "/assets/us-education-data.png"
+    ],
+    "Link": "",
+    "Github": "",
+    "TechStack": ["Python", "Pandas", "Matplotlib", "NumPy", "Data Visualization"],
+    "Features": [
+      "Interactive choropleth map showing median household income by state",
+      "Statistical analysis of doctoral degree holders vs income correlation",
+      "Population demographics breakdown by education level",
+      "Comprehensive state rankings and comparative analytics"
+    ]
   }
 ]
