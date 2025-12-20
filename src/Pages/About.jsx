@@ -72,8 +72,13 @@ const ProfileImage = memo(() => (
   </div>
 ));
 
-const StatCard = memo(({ icon: Icon, color, value, label, description, animation }) => (
-  <div data-aos={animation} data-aos-duration={1300} className="relative group">
+const StatCard = memo(({ icon: Icon, color, value, label, description, animation, onClick }) => (
+  <div 
+    data-aos={animation} 
+    data-aos-duration={1300} 
+    className="relative group cursor-pointer"
+    onClick={onClick}
+  >
     <div className="relative z-10 bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-white/10 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full flex flex-col justify-between">
       <div className={`absolute -z-10 inset-0 bg-gradient-to-br ${color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}></div>
       
@@ -152,6 +157,35 @@ const AboutPage = () => {
     };
   }, []);
 
+  // Click handlers for stat cards
+  const handleProjectsClick = () => {
+    const portfolioSection = document.getElementById('Portofolio');
+    if (portfolioSection) {
+      portfolioSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleCertificatesClick = () => {
+    const portfolioSection = document.getElementById('Portofolio');
+    if (portfolioSection) {
+      portfolioSection.scrollIntoView({ behavior: 'smooth' });
+      // Wait for scroll to complete, then switch to Certificates tab (index 1)
+      setTimeout(() => {
+        const certificatesTab = document.querySelector('[role="tablist"] button:nth-child(2)');
+        if (certificatesTab) {
+          certificatesTab.click();
+        }
+      }, 500);
+    }
+  };
+
+  const handleExperienceClick = () => {
+    const portfolioSection = document.getElementById('Portofolio');
+    if (portfolioSection) {
+      portfolioSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   // Memoized stats data
   const statsData = useMemo(() => [
     {
@@ -161,6 +195,7 @@ const AboutPage = () => {
       label: "Total Projects",
       description: "Innovative web solutions crafted",
       animation: "fade-right",
+      onClick: handleProjectsClick,
     },
     {
       icon: Award,
@@ -169,6 +204,7 @@ const AboutPage = () => {
       label: "Certificates",
       description: "Professional skills validated",
       animation: "fade-up",
+      onClick: handleCertificatesClick,
     },
     {
       icon: Globe,
@@ -177,6 +213,7 @@ const AboutPage = () => {
       label: "Years of Experience",
       description: "Continuous learning journey",
       animation: "fade-left",
+      onClick: handleExperienceClick,
     },
   ], [totalProjects, totalCertificates, YearExperience]);
 
@@ -255,13 +292,13 @@ My long-term dream is to use data and technology to fight against climate change
           <ProfileImage />
         </div>
 
-        <a href="#Portofolio">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 cursor-pointer">
-            {statsData.map((stat) => (
-              <StatCard key={stat.label} {...stat} />
-            ))}
-          </div>
         </a>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+          {statsData.map((stat) => (
+            <StatCard key={stat.label} {...stat} />
+          ))}
+        </div>
       </div>
 
       <style jsx>{`
