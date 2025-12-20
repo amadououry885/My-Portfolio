@@ -54,5 +54,27 @@
       "Population demographics breakdown by education level",
       "Comprehensive state rankings and comparative analytics"
     ]
+  },
+  {
+    "id": 4,
+    "Title": "Global Water Access Analysis (2020)",
+    "Description": "Detailed analysis of global access to drinking water in 2020, exploring four service levels (Basic, Limited, Unimproved, Surface) across 7.79 billion population. Examines disparities between national, urban, and rural populations with descriptive statistics and visualizations to guide interventions.",
+    "Img": "/assets/water-dataset.png",
+    "Images": [
+      "/assets/water-dataset.png",
+      "/assets/water-access-levels.png",
+      "/assets/water-regional.png",
+      "/assets/water-regional2.png",
+      "/assets/water-statistics.png"
+    ],
+    "Link": "",
+    "Github": "",
+    "TechStack": ["Python", "Pandas", "Matplotlib", "Seaborn", "NumPy", "Statistical Analysis"],
+    "Features": [
+      "Population distribution analysis across urban and rural settings",
+      "Box plot comparisons of water service levels by region",
+      "Stacked bar charts showing national, rural, and urban water access",
+      "Descriptive statistics with central tendency and spread measures"
+    ]
   }
 ]
