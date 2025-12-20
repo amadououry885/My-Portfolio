@@ -291,8 +291,6 @@ My long-term dream is to use data and technology to fight against climate change
 
           <ProfileImage />
         </div>
-
-        </a>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
           {statsData.map((stat) => (
