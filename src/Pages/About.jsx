@@ -315,15 +315,27 @@ My long-term dream is to use data and technology to fight against climate change
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-900/30 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
             <LanguageBar 
-              language="English" 
-              proficiency={90} 
-              flag="🇬🇧" 
+              language="Poulaar (Fulfulde)" 
+              proficiency={100} 
+              flag="🗣️" 
               animation="fade-right"
             />
             <LanguageBar 
               language="French" 
               proficiency={100} 
               flag="🇫🇷" 
+              animation="fade-left"
+            />
+            <LanguageBar 
+              language="English" 
+              proficiency={90} 
+              flag="🇬🇧" 
+              animation="fade-right"
+            />
+            <LanguageBar 
+              language="Wolof" 
+              proficiency={70} 
+              flag="🇸🇳" 
               animation="fade-left"
             />
           </div>
