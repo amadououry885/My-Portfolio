@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import React, { useState } from 'react';
 import "./index.css";
 import Home from "./Pages/Home";
@@ -74,7 +74,12 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
         <Route path="/project/:id" element={<ProjectPageLayout />} />
-         <Route path="*" element={<NotFoundPage />} /> {/* Ini route 404 */}
+        {/* Redirect section anchors to home page */}
+        <Route path="/Home" element={<Navigate to="/" replace />} />
+        <Route path="/About" element={<Navigate to="/" replace />} />
+        <Route path="/Portofolio" element={<Navigate to="/" replace />} />
+        <Route path="/Contact" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFoundPage />} /> {/* 404 route */}
       </Routes>
     </HashRouter>
   );
