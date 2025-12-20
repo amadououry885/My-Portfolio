@@ -85,7 +85,6 @@ const StatCard = memo(({ icon: Icon, color, value, label, description, animation
           className="text-4xl font-bold text-white"
           data-aos="fade-up-left"
           data-aos-duration="1500"
-          data-aos-anchor-placement="top-bottom"
         >
           {value}
         </span>
@@ -96,7 +95,6 @@ const StatCard = memo(({ icon: Icon, color, value, label, description, animation
           className="text-sm uppercase tracking-wider text-gray-300 mb-2"
           data-aos="fade-up"
           data-aos-duration="800"
-          data-aos-anchor-placement="top-bottom"
         >
           {label}
         </p>
@@ -105,7 +103,6 @@ const StatCard = memo(({ icon: Icon, color, value, label, description, animation
             className="text-xs text-gray-400"
             data-aos="fade-up"
             data-aos-duration="1000"
-            data-aos-anchor-placement="top-bottom"
           >
             {description}
           </p>
